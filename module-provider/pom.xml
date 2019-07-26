@@ -63,6 +63,18 @@
         <artifactId>module-security</artifactId>
     </dependency>
     
+    <!-- 将服务在Eureka注册中心注册，Eureka客户端依赖包 -->
+    <dependency>
+      	<groupId>org.springframework.cloud</groupId>
+      	<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+    
+    <!-- springboot监控, actuator依赖包 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    
     <!-- <dependency>
         <groupId>enjoy</groupId>
         <artifactId>microcloud-security</artifactId>
