@@ -2,6 +2,8 @@ server:
   port: 80
 
 feign:
+ hystrix:
+    enabled: true
  compression:
   request:
     enabled: true
@@ -9,11 +11,11 @@ feign:
      - text/xml
      - application/xml
      - application/json
-    min-request-size: 2048 # 超过2048的字节进行压缩
+    min-request-size: 2048 # 超过2048的字节进行压缩，如果不设置默认是不开启。
 
-logging:
+logging:  # 记录日志
  level:
-  cn.enjoy.service: DEBUG
+  org.module.service: DEBUG
 
 eureka:
   client:

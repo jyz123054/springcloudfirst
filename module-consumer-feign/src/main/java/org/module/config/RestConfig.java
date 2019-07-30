@@ -1,3 +1,4 @@
+package org.module.config;
 /*
 package cn.enjoy.config;
 

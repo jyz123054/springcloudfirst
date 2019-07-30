@@ -1,2 +1,8 @@
 server:
   port: 80
+  
+eureka:
+  client:
+    register-with-eureka: false #消费方，做负载均衡，不需要作为服务注册到Eureka注册中心，而是通过Ribbon做负载均衡自动连接下面的defaultZone
+    service-url:
+        defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka

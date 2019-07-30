@@ -1,7 +1,8 @@
-package org.module.consumer.feign.controller;
+package org.module.controller;
 
 import org.module.api.Product;
 import org.module.service.IProductClientServiceInter;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,17 +19,24 @@ public class ConsumerProductController {
     @Resource
     private LoadBalancerClient loadBalancerClient;
 
-    @RequestMapping("/product/get")
+    @RequestMapping("/provider/get")
     public Object getProduct(long id) {
         return  iProductClientServiceInter.getProduct(id);
     }
 
-    @RequestMapping("/product/list")
+    @RequestMapping("/provider/list")
     public  Object listProduct() {
+    	ServiceInstance instance = loadBalancerClient.choose("module-provider");
+    	
+    	System.out.println(
+                "【*** Feign ServiceInstance ***】host = " + instance.getHost()
+                        + "、port = " + instance.getPort()
+                        + "、serviceId = " + instance.getServiceId());
+    	
         return iProductClientServiceInter.listProduct();
     }
 
-    @RequestMapping("/product/add")
+    @RequestMapping("/provider/add")
     public Object addPorduct(Product product) {
         return  iProductClientServiceInter.addPorduct(product);
     }

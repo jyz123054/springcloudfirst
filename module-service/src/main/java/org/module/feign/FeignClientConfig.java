@@ -17,8 +17,13 @@ public class FeignClientConfig {
         return new BasicAuthRequestInterceptor("admin", "enjoy");
     }
 
+    /**
+     * Feign客户端默认的logger.level对象定义为none级别。
+     * 	所以如果需要打印日志，这里需要设置为具体的日志级别。
+     * @return
+     */
     @Bean
     public Logger.Level getFeignLoggerLevel() {
-        return feign.Logger.Level.FULL ;
+        return feign.Logger.Level.FULL;
     }
 }

@@ -8,7 +8,8 @@ eureka:
     fetch-registry: false   # 是否要从eureka获取注册谢谢
     register-with-eureka: false # 是否要注册到eureka
     service-url:
-        #defaultZone: http://jyz:enjoy@localhost:7001/eureka
+        # defaultZone: http://jyz:enjoy@localhost:7001/eureka
+        # 连接的是哪一个Eureka注册中心
         defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
   instance: # eureak实例定义
     hostname: eureka1   # 定义 Eureka 实例所在的主机名称

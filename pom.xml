@@ -107,6 +107,8 @@
   <modules>
   	<module>module-api</module>
   	<module>module-provider</module>
+  	<module>module-provider2</module>
+    <module>module-provider3</module>
   	<module>module-consumer</module>
   	<module>module-security</module>
     <module>module-eureka</module>
@@ -114,5 +116,6 @@
     <module>module-eureka3</module>
     <module>module-consumer-feign</module>
     <module>module-service</module>
+    
   </modules>
 </project>

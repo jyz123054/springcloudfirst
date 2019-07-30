@@ -1,4 +1,5 @@
-package org.module.consumer.feign;
+package org.module;
+import org.module.selfRibbon.config.SelfRibbonPolicy;
 //import cn.xiangxue.config.RibbonConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +9,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableEurekaClient
-//@RibbonClient(name = "module-provider", configuration = RibbonConfig.class)
+//自定义Ribbon路由策略
+@RibbonClient(name = "module-provider", configuration = SelfRibbonPolicy.class)
 @EnableFeignClients("org.module.service")
 public class ConsumerFeignApp {
 	
